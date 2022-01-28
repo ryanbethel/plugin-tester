@@ -1,0 +1,67 @@
+{
+    "name": "fwa-link-app",
+    "version": "0.0.0",
+    "description": "FWA example app",
+    "scripts": {
+        "start": "arc sandbox",
+        "lint": "eslint src --ignore-pattern node_modules --fix",
+        "test": " cross-env tape 'test/**/*-test.js' --verbose | tap-arc ",
+        "styles": "cssmitten ./css-config.json > ./public/components/styles.css"
+    },
+    "devDependencies": {
+        "@architect/architect": "^10.0.0-RC.1",
+        "@architect/eslint-config": "^2.0.1",
+        "@begin/data": "^3.0.4",
+        "browser-sync": "^2.27.7",
+        "cssmitten": "^3.0.5",
+        "eslint": "^8.4.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "oauth2-mock-server": "^4.1.1",
+        "pptr-testing-library": "^0.7.0",
+        "prettier": "^2.5.1",
+        "prettier-eslint": "^13.0.0",
+        "puppeteer": "^13.1.2",
+        "tap-arc": "^0.1.1",
+        "tape": "^5.3.2",
+        "tiny-json-http": "^7.3.0"
+    },
+    "dependencies": {
+        "@architect/functions": "^5.0.0-RC.1",
+        "@enhance/ssr": "^1.1.2-next.1",
+        "jotform-css.js": "^1.0.1",
+        "jsonwebtoken": "^8.5.1",
+        "nanoid": "^3.1.20",
+        "xss": "^1.0.8"
+    },
+    "eslintConfig": {
+        "extends": [
+            "@architect/eslint-config",
+            "plugin:prettier/recommended"
+        ],
+        "plugins": [
+            "prettier"
+        ],
+        "rules": {
+            "prettier/prettier": [
+                "error",
+                {
+                    "semi": false,
+                    "singleQuote": true,
+                    "tabWidth": 2,
+                    "useTabs": false,
+                    "trailingComma": "none"
+                }
+            ]
+        },
+        "parserOptions": {
+            "ecmaVersion": 2020,
+            "sourceType": "module"
+        },
+        "env": {
+            "es2021": true,
+            "browser": true,
+            "node": true
+        }
+    }
+}
